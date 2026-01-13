@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spruce Meadows HOA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f0;
+        }
+
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container img {
+            max-width: 500px;
+            height: auto;
+        }
+
+        nav {
+            background: #2d5016;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: #3d6b20;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .content-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        h1 {
+            color: #2d5016;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2d5016;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #2d5016;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .announcement {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2d5016;
+            border-radius: 4px;
+        }
+
+        .announcement-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .meeting-item, .event-item {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .meeting-date, .event-date {
+            font-weight: bold;
+            color: #2d5016;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .board-member {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .board-member h3 {
+            color: #2d5016;
+            margin-bottom: 5px;
+        }
+
+        .board-role {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .document-link {
+            display: inline-block;
+            background: #2d5016;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 10px 10px 0;
+            transition: background 0.3s;
+        }
+
+        .document-link:hover {
+            background: #3d6b20;
+        }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container img {
+                max-width: 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                min-width: 100%;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Spruce Meadows Homeowners Association">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav-link active" onclick="showSection('home')">Home</a></li>
+            <li><a href="#meetings" class="nav-link" onclick="showSection('meetings')">Meetings</a></li>
+            <li><a href="#events" class="nav-link" onclick="showSection('events')">Events</a></li>
+            <li><a href="#documents" class="nav-link" onclick="showSection('documents')">Documents</a></li>
+            <li><a href="#board" class="nav-link" onclick="showSection('board')">Board Members</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- HOME SECTION -->
+        <section id="home" class="content-section active">
+            <h1>Welcome to Spruce Meadows HOA</h1>
+            <p>Welcome to the official website of the Spruce Meadows Homeowners Association. Here you'll find important announcements, meeting information, community events, and resources for our neighborhood.</p>
+
+            <h2>Recent Announcements</h2>
+
+            <div class="announcement">
+                <div class="announcement-date">January 10, 2026</div>
+                <h3>Annual HOA Dues Reminder</h3>
+                <p>This is a friendly reminder that annual HOA dues are due by January 31, 2026. Please submit your payment of $350 to the management office or via online portal. Thank you for your prompt attention to this matter.</p>
+            </div>
+
+            <div class="announcement">
+                <div class="announcement-date">January 5, 2026</div>
+                <h3>Snow Removal Guidelines</h3>
+                <p>With winter weather upon us, please remember that homeowners are responsible for clearing sidewalks in front of their properties within 24 hours of snowfall. The HOA will handle common area snow removal. Thank you for helping keep our community safe!</p>
+            </div>
+
+            <!-- TO ADD MORE ANNOUNCEMENTS: Copy the entire <div class="announcement">...</div> block above and paste it here. Change the date and content. -->
+        </section>
+
+        <!-- MEETINGS SECTION -->
+        <section id="meetings" class="content-section">
+            <h1>HOA Meetings</h1>
+
+            <h2>Upcoming Meetings</h2>
+
+            <div class="meeting-item">
+                <div class="meeting-date">February 15, 2026 - 7:00 PM</div>
+                <p><strong>Location:</strong> Community Center</p>
+                <p><strong>Agenda:</strong> Budget review, landscaping proposals, parking policy discussion</p>
+            </div>
+
+            <div class="meeting-item">
+                <div class="meeting-date">March 20, 2026 - 7:00 PM</div>
+                <p><strong>Location:</strong> Community Center</p>
+                <p><strong>Agenda:</strong> Spring projects, annual meeting preparation</p>
+            </div>
+
+            <!-- TO ADD MORE MEETINGS: Copy the <div class="meeting-item">...</div> block above -->
+
+            <h2>Past Meeting Minutes</h2>
+
+            <div class="meeting-item">
+                <div class="meeting-date">December 10, 2025</div>
+                <p><strong>Topics Covered:</strong> Year-end financial review, holiday decoration guidelines, winter maintenance</p>
+                <a href="minutes-dec-2025.pdf" class="document-link" target="_blank">View Minutes (PDF)</a>
+            </div>
+
+            <div class="meeting-item">
+                <div class="meeting-date">November 12, 2025</div>
+                <p><strong>Topics Covered:</strong> 2026 budget proposal, fence repair projects, neighbor concerns</p>
+                <a href="minutes-nov-2025.pdf" class="document-link" target="_blank">View Minutes (PDF)</a>
+            </div>
+
+            <!-- TO ADD PAST MEETINGS: Copy the <div class="meeting-item">...</div> block above. Upload the PDF to GitHub and link to it -->
+        </section>
+
+        <!-- EVENTS SECTION -->
+        <section id="events" class="content-section">
+            <h1>Community Events</h1>
+
+            <h2>Upcoming Events</h2>
+
+            <div class="event-item">
+                <div class="event-date">February 14, 2026 - 6:00 PM</div>
+                <h3>Valentine's Day Potluck</h3>
+                <p><strong>Location:</strong> Community Center</p>
+                <p>Join your neighbors for a festive potluck dinner! Bring your favorite dish to share. Desserts and drinks will be provided by the HOA.</p>
+            </div>
+
+            <div class="event-item">
+                <div class="event-date">March 30, 2026 - 10:00 AM</div>
+                <h3>Spring Community Cleanup Day</h3>
+                <p><strong>Location:</strong> Meet at Main Entrance</p>
+                <p>Help beautify our neighborhood! We'll be cleaning common areas, planting flowers, and sprucing up our community. Gloves and supplies provided. Coffee and donuts for all volunteers!</p>
+            </div>
+
+            <!-- TO ADD MORE EVENTS: Copy the <div class="event-item">...</div> block above -->
+        </section>
+
+        <!-- DOCUMENTS SECTION -->
+        <section id="documents" class="content-section">
+            <h1>HOA Documents & Rules</h1>
+
+            <p>Below you'll find important documents and guidelines for our community. Please review these materials to ensure compliance with HOA policies.</p>
+
+            <h2>Governing Documents</h2>
+            <a href="spruce-meadows-rules.pdf" class="document-link" target="_blank">HOA Rules & Regulations (PDF)</a>
+            <a href="bylaws.pdf" class="document-link" target="_blank">HOA Bylaws (PDF)</a>
+            <a href="ccrs.pdf" class="document-link" target="_blank">CC&Rs (PDF)</a>
+
+            <h2>Forms & Applications</h2>
+            <a href="architectural-request.pdf" class="document-link" target="_blank">Architectural Change Request Form</a>
+            <a href="violation-appeal.pdf" class="document-link" target="_blank">Violation Appeal Form</a>
+
+            <!-- TO ADD MORE DOCUMENTS: Upload the PDF to GitHub and add a link using the format above -->
+        </section>
+
+        <!-- BOARD SECTION -->
+        <section id="board" class="content-section">
+            <h1>Board Members</h1>
+
+            <p>Your HOA is governed by a volunteer board of homeowners. Feel free to reach out with questions or concerns.</p>
+
+            <div class="board-member">
+                <h3>John Smith</h3>
+                <div class="board-role">President</div>
+                <p><strong>Email:</strong> president@sprucemeadowshoa.com</p>
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+            </div>
+
+            <div class="board-member">
+                <h3>Sarah Johnson</h3>
+                <div class="board-role">Vice President</div>
+                <p><strong>Email:</strong> vicepresident@sprucemeadowshoa.com</p>
+                <p><strong>Phone:</strong> (555) 234-5678</p>
+            </div>
+
+            <div class="board-member">
+                <h3>Michael Chen</h3>
+                <div class="board-role">Treasurer</div>
+                <p><strong>Email:</strong> treasurer@sprucemeadowshoa.com</p>
+                <p><strong>Phone:</strong> (555) 345-6789</p>
+            </div>
+
+            <div class="board-member">
+                <h3>Emily Rodriguez</h3>
+                <div class="board-role">Secretary</div>
+                <p><strong>Email:</strong> secretary@sprucemeadowshoa.com</p>
+                <p><strong>Phone:</strong> (555) 456-7890</p>
+            </div>
+
+            <!-- TO EDIT BOARD MEMBERS: Change the name, role, email, and phone above. To add more, copy the <div class="board-member">...</div> block -->
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Spruce Meadows Homeowners Association. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            const links = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
